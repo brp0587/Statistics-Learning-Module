@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Study Guide | આંકડાશાસ્ત્ર અભ્યાસ માર્ગદર્શિકા</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --secondary: #10B981;
+            --dark: #1F2937;
+            --light: #F3F4F6;
+            --white: #FFFFFF;
+            --table-border: #C7D2FE;
+            --table-head: #E0E7FF;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), #818CF8);
+            color: var(--white);
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        h1 { margin: 0; font-size: 2.5em; }
+        h2 {
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h2 img { width: 40px; margin-right: 15px; }
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        .bilingual {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .lang-block { flex: 1; min-width: 300px; }
+        .example-box {
+            background: #EEF2FF;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid var(--table-border);
+            overflow-x: auto;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid var(--table-border);
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: var(--table-head);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #F8FAFC;
+        }
+
+        /* Calculator Styles */
+        .lab-section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            margin-top: 50px;
+            border-top: 6px solid var(--secondary);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        input, select {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        button {
+            background-color: var(--primary);
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        button:hover { background-color: #4338CA; }
+        button.alt-btn { background-color: var(--secondary); }
+        button.alt-btn:hover { background-color: #059669; }
+        
+        #output {
+            margin-top: 25px;
+            padding: 20px;
+            background: #F9FAFB;
+            border-radius: 8px;
+            border: 1px dashed #9CA3AF;
+            overflow-x: auto;
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-top: 1px solid #D1D5DB;
+            font-size: 0.9em;
+            color: #4B5563;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Unit 5: Statistics</h1>
+        <h2>એકમ ૫: આંકડાશાસ્ત્ર</h2>
+    </header>
+
+    <section id="topic-5-1">
+        <h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/3273/3273397.png" alt="Mean Icon"> 
+            5.1 Mean for ungrouped and grouped data
+        </h2>
+        
+        <div class="card bilingual">
+            <div class="lang-block">
+                <h3>Definition</h3>
+                <p>The <strong>Arithmetic Mean</strong> is the average of a given set of data. For ungrouped data, it is the sum of all observations divided by the number of observations. For grouped data, frequencies are used as weights.</p>
+                <strong>Real-Life Application:</strong> Calculating the average test scores of polytechnic students to evaluate overall class performance.
+            </div>
+            <div class="lang-block">
+                <h3>વ્યાખ્યા</h3>
+                <p><strong>સમાંતર મધ્યક</strong> એ આપેલી માહિતીની સરેરાશ છે. અવર્ગીકૃત માહિતી માટે, તે બધા અવલોકનોના સરવાળાને કુલ સંખ્યા વડે ભાગીને મેળવવામાં આવે છે. વર્ગીકૃત માહિતીમાં આવૃત્તિનો ઉપયોગ થાય છે.</p>
+                <strong>વ્યવહારુ ઉપયોગ:</strong> વર્ગના એકંદર પ્રદર્શનનું મૂલ્યાંકન કરવા માટે પોલિટેકનિકના વિદ્યાર્થીઓના સરેરાશ ગુણની ગણતરી કરવી.
+            </div>
+        </div>
+
+        <div class="example-box">
+            <h4>Example 1: Ungrouped Data (અવર્ગીકૃત માહિતી)</h4>
+            <p><strong>Question:</strong> Find the mean of: 5, 8, 12, 15, 20. (મધ્યક શોધો.)</p>
+            <strong>Solution (ઉકેલ):</strong> Here, \( n = 5 \)
+            <table>
+                <tr>
+                    <th>Observation \( (x_i) \)</th>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>15</td>
+                    <td>20</td>
+                    <td class="total-row">Total \( \sum x_i = 60 \)</td>
+                </tr>
+            </table>
+            <p>\( \overline{x} = \frac{\sum x_i}{n} = \frac{60}{5} = 12 \)<br>
+            <strong>Answer: \( \overline{x} = 12 \)</strong></p>
+        </div>
+
+        <div class="example-box">
+            <h4>Example 2: Discrete Grouped Data (અસતત આવૃત્તિ વિતરણ)</h4>
+            <p><strong>Question:</strong> Find the mean. (મધ્યક શોધો.)</p>
+            <strong>Solution (ઉકેલ):</strong>
+            <table>
+                <tr>
+                    <th>\( x_i \)</th>
+                    <th>\( f_i \)</th>
+                    <th>\( f_i x_i \)</th>
+                </tr>
+                <tr><td>10</td><td>2</td><td>20</td></tr>
+                <tr><td>20</td><td>5</td><td>100</td></tr>
+                <tr><td>30</td><td>2</td><td>60</td></tr>
+                <tr><td>40</td><td>1</td><td>40</td></tr>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td>\( N = 10 \)</td>
+                    <td>\( \sum f_i x_i = 220 \)</td>
+                </tr>
+            </table>
+            <p>\( \overline{x} = \frac{\sum f_i x_i}{N} = \frac{220}{10} = 22 \)<br>
+            <strong>Answer: \( \overline{x} = 22 \)</strong></p>
+        </div>
+
+        <div class="example-box">
+            <h4>Example 3: Continuous Grouped Data (વર્ગીકૃત માહિતી - Step Deviation)</h4>
+            <p><strong>Question:</strong> Find the mean. Class: 0-10, 10-20, 20-30, 30-40. Freq: 4, 6, 8, 2.</p>
+            <strong>Solution (ઉકેલ):</strong> Let Assumed Mean \( A = 15 \) (Mid-value of 10-20), Class length \( c = 10 \).
+            <table>
+                <tr>
+                    <th>Class</th>
+                    <th>Mid-value \( (x_i) \)</th>
+                    <th>Freq \( (f_i) \)</th>
+                    <th>\( d_i = \frac{x_i - 15}{10} \)</th>
+                    <th>\( f_i d_i \)</th>
+                </tr>
+                <tr><td>0-10</td><td>5</td><td>4</td><td>-1</td><td>-4</td></tr>
+                <tr><td>10-20</td><td>15 (A)</td><td>6</td><td>0</td><td>0</td></tr>
+                <tr><td>20-30</td><td>25</td><td>8</td><td>1</td><td>8</td></tr>
+                <tr><td>30-40</td><td>35</td><td>2</td><td>2</td><td>4</td></tr>
+                <tr class="total-row">
+                    <td colspan="2">Total</td>
+                    <td>\( N = 20 \)</td>
+                    <td></td>
+                    <td>\( \sum f_i d_i = 8 \)</td>
+                </tr>
+            </table>
+            <p>\( \overline{x} = A + \left(\frac{\sum f_i d_i}{N}\right) \times c \)<br>
+            \( \overline{x} = 15 + \left(\frac{8}{20}\right) \times 10 = 15 + 4 = 19 \)<br>
+            <strong>Answer: \( \overline{x} = 19 \)</strong></p>
+        </div>
+
+        <div class="example-box">
+            <h4>Example 4: Missing Frequency (ખૂટતી આવૃત્તિ)</h4>
+            <p><strong>Question:</strong> Mean is 22. Find missing frequency k. (મધ્યક 22 છે. k શોધો.)</p>
+            <strong>Solution (ઉકેલ):</strong>
+            <table>
+                <tr>
+                    <th>\( x_i \)</th>
+                    <th>\( f_i \)</th>
+                    <th>\( f_i x_i \)</th>
+                </tr>
+                <tr><td>10</td><td>2</td><td>20</td></tr>
+                <tr><td>20</td><td>k</td><td>20k</td></tr>
+                <tr><td>30</td><td>3</td><td>90</td></tr>
+                <tr><td>40</td><td>1</td><td>40</td></tr>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td>\( \sum f_i = 6 + k \)</td>
+                    <td>\( \sum f_i x_i = 150 + 20k \)</td>
+                </tr>
+            </table>
+            <p>\( \overline{x} = \frac{\sum f_i x_i}{N} \Rightarrow 22 = \frac{150 + 20k}{6 + k} \)<br>
+            \( 132 + 22k = 150 + 20k \Rightarrow 2k = 18 \Rightarrow k = 9 \)<br>
+            <strong>Answer: \( k = 9 \)</strong></p>
+        </div>
+    </section>
+
+    <section id="topic-5-2">
+        <h2>
+            <img src="https://cdn-icons-png.flaticon.com/512/3094/3094936.png" alt="SD Icon"> 
+            5.2 Mean deviation and Standard deviation about Mean
+        </h2>
+        
+        <div class="card bilingual">
+            <div class="lang-block">
+                <h3>Definition</h3>
+                <p><strong>Mean Deviation:</strong> The mean of the absolute deviations of observations from the arithmetic mean.<br>
+                <strong>Standard Deviation:</strong> The square root of the variance, measuring the amount of variation or dispersion in a set of values.</p>
+                <strong>Real-Life Application:</strong> Analyzing the variation in agricultural crop yields to predict future harvests accurately.
+            </div>
+            <div class="lang-block">
+                <h3>વ્યાખ્યા</h3>
+                <p><strong>સરેરાશ વિચલન:</strong> મધ્યકથી લીધેલા અવલોકનોના તફાવતોના નિરપેક્ષ મૂલ્યોની સરેરાશ.<br>
+                <strong>પ્રમાણિત વિચલન:</strong> એ માહિતીના પ્રસારનું માપ દર્શાવે છે (વિચરણનું વર્ગમૂળ).</p>
+                <strong>વ્યવહારુ ઉપયોગ:</strong> ભાવિ પાકની સચોટ આગાહી કરવા માટે કૃષિ પાકની ઉપજમાં થતા ફેરફારોનું વિશ્લેષણ કરવું.
+            </div>
+        </div>
+
+        <div class="example-box">
+            <h4>Example 1: Standard Deviation - Ungrouped (અવર્ગીકૃત માહિતી)</h4>
+            <p><strong>Question:</strong> Find S.D. of 2, 4, 6, 8, 10. (પ્રમાણિત વિચલન શોધો.)</p>
+            <strong>Solution (ઉકેલ):</strong> First, find Mean \( \overline{x} = \frac{30}{5} = 6 \).
+            <table>
+                <tr>
+                    <th>\( x_i \)</th>
+                    <th>\( x_i - \overline{x} \)</th>
+                    <th>\( (x_i - \overline{x})^2 \)</th>
+                </tr>
+                <tr><td>2</td><td>-4</td><td>16</td></tr>
+                <tr><td>4</td><td>-2</td><td>4</td></tr>
+                <tr><td>6</td><td>0</td><td>0</td></tr>
+                <tr><td>8</td><td>2</td><td>4</td></tr>
+                <tr><td>10</td><td>4</td><td>16</td></tr>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td>0</td>
+                    <td>\( \sum = 40 \)</td>
+                </tr>
+            </table>
+            <p>\( \sigma = \sqrt{\frac{\sum (x_i - \overline{x})^2}{n}} = \sqrt{\frac{40}{5}} = \sqrt{8} \approx 2.828 \)<br>
+            <strong>Answer: \( \sigma \approx 2.828 \)</strong></p>
+        </div>
+
+        <div class="example-box">
+            <h4>Example 2: Standard Deviation - Grouped (વર્ગીકૃત માહિતી)</h4>
+            <p><strong>Question:</strong> Find S.D. Class: 0-10, 10-20, 20-30. Freq: 1, 2, 1.</p>
+            <strong>Solution (ઉકેલ):</strong> Let Assumed Mean \( A = 15 \), Class length \( c = 10 \).
+            <table>
+                <tr>
+                    <th>Class</th>
+                    <th>\( x_i \)</th>
+                    <th>\( f_i \)</th>
+                    <th>\( d_i = \frac{x_i-15}{10} \)</th>
+                    <th>\( f_i d_i \)</th>
+                    <th>\( f_i d_i^2 \)</th>
+                </tr>
+                <tr><td>0-10</td><td>5</td><td>1</td><td>-1</td><td>-1</td><td>1</td></tr>
+                <tr><td>10-20</td><td>15</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>20-30</td><td>25</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+                <tr class="total-row">
+                    <td colspan="2">Total</td>
+                    <td>\( N = 4 \)</td>
+                    <td></td>
+                    <td>\( \sum f_i d_i = 0 \)</td>
+                    <td>\( \sum f_i d_i^2 = 2 \)</td>
+                </tr>
+            </table>
+            <p>\( \sigma = \sqrt{\frac{\sum f_i d_i^2}{N} - \left(\frac{\sum f_i d_i}{N}\right)^2} \times c \)<br>
+            \( \sigma = \sqrt{\frac{2}{4} - 0^2} \times 10 = \sqrt{0.5} \times 10 = 0.707 \times 10 = 7.07 \)<br>
+            <strong>Answer: \( \sigma = 7.07 \)</strong></p>
+        </div>
+
+        <div class="example-box">
+            <h4>Example 3: Mean Deviation - Discrete Data (સરેરાશ વિચલન)</h4>
+            <p><strong>Question:</strong> Find Mean Deviation about Mean. \( x_i \): 2, 4, 6. \( f_i \): 3, 4, 3.</p>
+            <strong>Solution (ઉકેલ):</strong>
+            <table>
+                <tr>
+                    <th>\( x_i \)</th>
+                    <th>\( f_i \)</th>
+                    <th>\( f_i x_i \)</th>
+                    <th>\( |x_i - \overline{x}| \)</th>
+                    <th>\( f_i |x_i - \overline{x}| \)</th>
+                </tr>
+                <tr><td>2</td><td>3</td><td>6</td><td>2</td><td>6</td></tr>
+                <tr><td>4</td><td>4</td><td>16</td><td>0</td><td>0</td></tr>
+                <tr><td>6</td><td>3</td><td>18</td><td>2</td><td>6</td></tr>
+                <tr class="total-row">
+                    <td>Total</td>
+                    <td>\( N = 10 \)</td>
+                    <td>\( \sum = 40 \)</td>
+                    <td></td>
+                    <td>\( \sum = 12 \)</td>
+                </tr>
+            </table>
+            <p>Mean \( \overline{x} = \frac{40}{10} = 4 \).<br>
+            \( M.D. = \frac{\sum f_i |x_i - \overline{x}|}{N} = \frac{12}{10} = 1.2 \)<br>
+            <strong>Answer: M.D. = 1.2</strong></p>
+        </div>
+    </section>
+
+    <section class="lab-section" id="lab">
+        <h2>Interactive StatLab | આંકડાશાસ્ત્ર કેલ્ક્યુલેટર</h2>
+        <p>Select your data type and enter your values. Click the specific button below to instantly generate a detailed step-by-step solution table for your calculation.</p>
+        
+        <div class="input-group">
+            <label for="dataType"><strong>Data Type / માહિતીનો પ્રકાર:</strong></label>
+            <select id="dataType" onchange="toggleMode()">
+                <option value="ungrouped">Ungrouped Data (અવર્ગીકૃત માહિતી)</option>
+                <option value="grouped">Grouped Data - Discrete/Continuous Midpoints (વર્ગીકૃત માહિતી)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label id="xLabel" for="dataX"><strong>Data Values (x) / અવલોકનો (Comma separated):</strong></label><br>
+            <input type="text" id="dataX" value="5, 8, 12, 15, 20" placeholder="e.g. 2, 4, 6, 8, 10">
+        </div>
+
+        <div class="input-group" id="freqInputDiv" style="display: none;">
+            <label for="dataF"><strong>Frequencies (f) / આવૃત્તિ (Comma separated):</strong></label><br>
+            <input type="text" id="dataF" value="" placeholder="e.g. 1, 3, 5, 2, 1">
+            <small style="display:block; color:#6B7280; margin-top:5px;">Ensure the number of frequencies matches the number of x values.</small>
+        </div>
+        
+        <div class="button-group">
+            <button onclick="calculate('mean')">Calculate Mean</button>
+            <button onclick="calculate('md')" class="alt-btn">Calculate Mean Deviation</button>
+            <button onclick="calculate('sd')">Calculate Standard Deviation</button>
+        </div>
+
+        <div id="output" style="display: none;"></div>
+    </section>
+
+    <footer>
+        <div class="left">Page Visits: <strong id="visitCounter">1</strong></div>
+        <div class="right">&copy; Prepared by Bhavin R Patel, Lecturer Mathematics</div>
+    </footer>
+</div>
+
+<script>
+    // Page Visit Counter Logic
+    let visits = localStorage.getItem('statGuideVisits');
+    if (!visits) { visits = 1; } 
+    else { visits = parseInt(visits) + 1; }
+    localStorage.setItem('statGuideVisits', visits);
+    document.getElementById('visitCounter').innerText = visits;
+
+    // UI Toggle Logic
+    function toggleMode() {
+        const mode = document.getElementById('dataType').value;
+        const freqDiv = document.getElementById('freqInputDiv');
+        const xLabel = document.getElementById('xLabel');
+        const xInput = document.getElementById('dataX');
+        
+        if(mode === 'ungrouped') {
+            freqDiv.style.display = 'none';
+            xLabel.innerHTML = '<strong>Data Values (x) / અવલોકનો (Comma separated):</strong>';
+            if(xInput.value === '10, 20, 30, 40') xInput.value = '5, 8, 12, 15, 20';
+        } else {
+            freqDiv.style.display = 'block';
+            xLabel.innerHTML = '<strong>Values or Class Midpoints (x) / મધ્ય કિંમત (Comma separated):</strong>';
+            if(xInput.value === '5, 8, 12, 15, 20') {
+                xInput.value = '10, 20, 30, 40';
+                document.getElementById('dataF').value = '2, 5, 2, 1';
+            }
+        }
+    }
+
+    // Calculation Engine
+    function calculate(operation) {
+        const mode = document.getElementById('dataType').value;
+        const xStr = document.getElementById('dataX').value;
+        const fStr = document.getElementById('dataF').value;
+        const outDiv = document.getElementById('output');
+        
+        // --- UPDATED PARSING LOGIC TO HANDLE "A-B" CLASSES ---
+        const xArr = xStr.split(',').map(item => {
+            let str = item.trim();
+            // Regex to check if the user entered a class like "10-20" or "10.5 - 20.5"
+            let match = str.match(/^(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)$/);
+            if (match) {
+                return (parseFloat(match[1]) + parseFloat(match[2])) / 2;
+            }
+            // If not a class range, parse it normally
+            return parseFloat(str);
+        }).filter(num => !isNaN(num));
+
+        let fArr = [];
+        
+        if (mode === 'grouped') {
+            fArr = fStr.split(',').map(item => parseFloat(item.trim())).filter(num => !isNaN(num));
+            if (xArr.length === 0 || xArr.length !== fArr.length) {
+                outDiv.style.display = 'block';
+                outDiv.innerHTML = '<p style="color:red;">Error: The number of X values (or classes) must exactly match the number of Frequency (f) values.</p>';
+                return;
+            }
+        } else if (xArr.length === 0) {
+            outDiv.style.display = 'block';
+            outDiv.innerHTML = '<p style="color:red;">Please enter valid numbers.</p>';
+            return;
+        }
+
+        let html = '';
+        
+        if (mode === 'ungrouped') {
+            html = buildUngroupedSolution(xArr, operation);
+        } else {
+            html = buildGroupedSolution(xArr, fArr, operation);
+        }
+
+        outDiv.style.display = 'block';
+        outDiv.innerHTML = html;
+
+        // Re-render MathJax formulas
+        if (window.MathJax) {
+            MathJax.typesetPromise([outDiv]).catch(function (err) {
+                console.error('MathJax error:', err.message);
+            });
+        }
+    }
+
+    function buildUngroupedSolution(xArr, operation) {
+        const n = xArr.length;
+        const sumX = xArr.reduce((a, b) => a + b, 0);
+        const mean = sumX / n;
+        
+        let html = `<h3>Step-by-Step Solution (Ungrouped Data)</h3>`;
+        
+        if (operation === 'mean') {
+            html += `<p><strong>Formula:</strong> \\( \\overline{x} = \\frac{\\sum x_i}{n} \\)</p>
+                     <table>
+                        <tr><th>Observation \\( (x_i) \\)</th></tr>`;
+            xArr.forEach(x => html += `<tr><td>${x}</td></tr>`);
+            html += `<tr class="total-row"><td>Total \\( \\sum x_i = ${sumX} \\)</td></tr>
+                     </table>
+                     <p>\\( \\overline{x} = \\frac{${sumX}}{${n}} = \\mathbf{${mean.toFixed(2)}} \\)</p>`;
+        } 
+        else if (operation === 'md') {
+            let sumAbs = 0;
+            html += `<p>First, calculate Mean: \\( \\overline{x} = \\frac{${sumX}}{${n}} = ${mean.toFixed(2)} \\)</p>
+                     <p><strong>Formula for MD:</strong> \\( M.D. = \\frac{\\sum |x_i - \\overline{x}|}{n} \\)</p>
+                     <table>
+                        <tr><th>\\( x_i \\)</th><th>\\( |x_i - ${mean.toFixed(2)}| \\)</th></tr>`;
+            xArr.forEach(x => {
+                const absDev = Math.abs(x - mean);
+                sumAbs += absDev;
+                html += `<tr><td>${x}</td><td>${absDev.toFixed(2)}</td></tr>`;
+            });
+            html += `<tr class="total-row"><td>Total</td><td>\\( \\sum = ${sumAbs.toFixed(2)} \\)</td></tr>
+                     </table>
+                     <p>Mean Deviation \\( = \\frac{${sumAbs.toFixed(2)}}{${n}} = \\mathbf{${(sumAbs/n).toFixed(2)}} \\)</p>`;
+        }
+        else if (operation === 'sd') {
+            let sumSq = 0;
+            html += `<p>First, calculate Mean: \\( \\overline{x} = \\frac{${sumX}}{${n}} = ${mean.toFixed(2)} \\)</p>
+                     <p><strong>Formula for SD:</strong> \\( \\sigma = \\sqrt{\\frac{\\sum (x_i - \\overline{x})^2}{n}} \\)</p>
+                     <table>
+                        <tr><th>\\( x_i \\)</th><th>\\( (x_i - \\overline{x}) \\)</th><th>\\( (x_i - \\overline{x})^2 \\)</th></tr>`;
+            xArr.forEach(x => {
+                const dev = x - mean;
+                const sqDev = dev * dev;
+                sumSq += sqDev;
+                html += `<tr><td>${x}</td><td>${dev.toFixed(2)}</td><td>${sqDev.toFixed(2)}</td></tr>`;
+            });
+            html += `<tr class="total-row"><td>Total</td><td>0</td><td>\\( \\sum = ${sumSq.toFixed(2)} \\)</td></tr>
+                     </table>
+                     <p>Variance \\( \\sigma^2 = \\frac{${sumSq.toFixed(2)}}{${n}} = ${(sumSq/n).toFixed(2)} \\)</p>
+                     <p>Standard Deviation \\( \\sigma = \\sqrt{${(sumSq/n).toFixed(2)}} = \\mathbf{${Math.sqrt(sumSq/n).toFixed(3)}} \\)</p>`;
+        }
+        return html;
+    }
+
+    function buildGroupedSolution(xArr, fArr, operation) {
+        let n = 0;
+        let sumFx = 0;
+        
+        for(let i=0; i<xArr.length; i++) {
+            n += fArr[i];
+            sumFx += (fArr[i] * xArr[i]);
+        }
+        const mean = sumFx / n;
+
+        let html = `<h3>Step-by-Step Solution (Grouped Data)</h3>`;
+        
+        if (operation === 'mean') {
+            html += `<p><strong>Formula:</strong> \\( \\overline{x} = \\frac{\\sum f_i x_i}{N} \\)</p>
+                     <table>
+                        <tr><th>\\( x_i \\)</th><th>\\( f_i \\)</th><th>\\( f_i x_i \\)</th></tr>`;
+            for(let i=0; i<xArr.length; i++) {
+                html += `<tr><td>${xArr[i]}</td><td>${fArr[i]}</td><td>${(fArr[i]*xArr[i]).toFixed(2)}</td></tr>`;
+            }
+            html += `<tr class="total-row"><td>Total</td><td>\\( N = ${n} \\)</td><td>\\( \\sum f_i x_i = ${sumFx.toFixed(2)} \\)</td></tr>
+                     </table>
+                     <p>\\( \\overline{x} = \\frac{${sumFx.toFixed(2)}}{${n}} = \\mathbf{${mean.toFixed(2)}} \\)</p>`;
+        }
+        else if (operation === 'md') {
+            let sumF_Abs = 0;
+            html += `<p>First, calculate Mean: \\( \\overline{x} = \\frac{${sumFx.toFixed(2)}}{${n}} = ${mean.toFixed(2)} \\)</p>
+                     <p><strong>Formula for MD:</strong> \\( M.D. = \\frac{\\sum f_i |x_i - \\overline{x}|}{N} \\)</p>
+                     <table>
+                        <tr><th>\\( x_i \\)</th><th>\\( f_i \\)</th><th>\\( |x_i - \\overline{x}| \\)</th><th>\\( f_i |x_i - \\overline{x}| \\)</th></tr>`;
+            for(let i=0; i<xArr.length; i++) {
+                const absDev = Math.abs(xArr[i] - mean);
+                const f_abs = fArr[i] * absDev;
+                sumF_Abs += f_abs;
+                html += `<tr><td>${xArr[i]}</td><td>${fArr[i]}</td><td>${absDev.toFixed(2)}</td><td>${f_abs.toFixed(2)}</td></tr>`;
+            }
+            html += `<tr class="total-row"><td colspan="2">Total \\( N = ${n} \\)</td><td></td><td>\\( \\sum = ${sumF_Abs.toFixed(2)} \\)</td></tr>
+                     </table>
+                     <p>Mean Deviation \\( = \\frac{${sumF_Abs.toFixed(2)}}{${n}} = \\mathbf{${(sumF_Abs/n).toFixed(2)}} \\)</p>`;
+        }
+        else if (operation === 'sd') {
+            let sumF_Sq = 0;
+            html += `<p>First, calculate Mean: \\( \\overline{x} = \\frac{${sumFx.toFixed(2)}}{${n}} = ${mean.toFixed(2)} \\)</p>
+                     <p><strong>Formula for SD:</strong> \\( \\sigma = \\sqrt{\\frac{\\sum f_i (x_i - \\overline{x})^2}{N}} \\)</p>
+                     <table>
+                        <tr><th>\\( x_i \\)</th><th>\\( f_i \\)</th><th>\\( (x_i - \\overline{x}) \\)</th><th>\\( (x_i - \\overline{x})^2 \\)</th><th>\\( f_i (x_i - \\overline{x})^2 \\)</th></tr>`;
+            for(let i=0; i<xArr.length; i++) {
+                const dev = xArr[i] - mean;
+                const sq = dev * dev;
+                const f_sq = fArr[i] * sq;
+                sumF_Sq += f_sq;
+                html += `<tr><td>${xArr[i]}</td><td>${fArr[i]}</td><td>${dev.toFixed(2)}</td><td>${sq.toFixed(2)}</td><td>${f_sq.toFixed(2)}</td></tr>`;
+            }
+            html += `<tr class="total-row"><td colspan="2">Total \\( N = ${n} \\)</td><td colspan="2"></td><td>\\( \\sum = ${sumF_Sq.toFixed(2)} \\)</td></tr>
+                     </table>
+                     <p>Variance \\( \\sigma^2 = \\frac{${sumF_Sq.toFixed(2)}}{${n}} = ${(sumF_Sq/n).toFixed(2)} \\)</p>
+                     <p>Standard Deviation \\( \\sigma = \\sqrt{${(sumF_Sq/n).toFixed(2)}} = \\mathbf{${Math.sqrt(sumF_Sq/n).toFixed(3)}} \\)</p>`;
+        }
+        return html;
+    }
+</script>
+
+</body>
+</html>
